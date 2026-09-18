@@ -1,19 +1,37 @@
 
   
-# Minecraft Server Installer Script (Vanilla,Forge, Spigot & Paper) 1.7.X - 1.21+
+  
+# Minecraft Server Installer Script (Vanilla, Forge, Spigot, Paper, Leaf & Arclight) 1.7.X - 26.X+
 ## <u>About the project</u>
 
-With this project, my goal was to make installing Minecraft servers, no matter if they are Vanilla, Forge, Spigot or Paper, as easy and beginner-friendly as possible. 
-After making some Tutorials on my [YouTube Channel](https://youtube.com/realtm_csgo) and providing a detailed [Documentation](https://docs.realtm.de) for them, there were still questions and problems on how to install a Minecraft Server on a Linux-Server.
-Thats why I created this All-in-One solution for installing a Minecraft Server (Forge, Vanilla, Spigot & Paper).
+With this project, my goal was to make installing Minecraft servers, no matter if they are Vanilla, Forge, Spigot, Paper, Leaf and Arclight, as easy and beginner-friendly as possible. 
+After making some Tutorials on my [YouTube Channel](https://youtube.com/realtm_csgo) and providing a detailed Documentation for them, there were still questions and problems on how to install a Minecraft Server on a Linux-Server.
+Thats why I created this All-in-One solution for installing a Minecraft Server (Forge, Vanilla, Spigot, Paper, Leaf & Arclight).
+
+
+
+## Support the Project
+
+This project was started with a simple goal: to make installing and managing a Minecraft server as easy and beginner-friendly as possible. Your contribution directly supports the project's future by helping to cover:
+
+* **Continuous Development:** Keeping the installer compatible with the latest versions of Minecraft, Java, and all supported server platforms.
+* **Infrastructure Costs:** Paying for the servers needed for testing, version checks, API and other backend features.
+
+If you find this tool useful, please consider showing your support. Every little bit helps and is greatly appreciated!
+
+[❤️ Sponsor on GitHub](https://github.com/sponsors/officialrealTM)
+
+[☕ Buy Me A Coffee](https://www.buymeacoffee.com/realtm)
 
 ## Supported Distros
  - Debian 10
  - Debian 11
  - Debian 12
+ - Debian 13
  - Ubuntu 18.04
  - Ubuntu 20.04
  - Ubuntu 22.04
+ - Ubuntu 24.04
 
 
 ## Requirements
@@ -30,30 +48,46 @@ Thats why I created this All-in-One solution for installing a Minecraft Server (
 - Graphical User Interface (GUI)
 - Easy-to-Use (even for beginners!)
 - Automatic installation of required programs/packages
-- Automatic installation of Java Versions for different Minecraft Versions (Including Java 8, Java 16, Java 17 and Java 21)
+- Automatic installation of Java Versions for different Minecraft Versions (Including Java 8, Java 16, Java 17, Java 21 and Java 25)
 - Creating Minecraft Server start-scripts (including a check if the correct Java Version is selcted)
 - Adjustable RAM-Allocation when installing a Minecraft Server
 - Installed Servers are stored in Sub-Folders, to install more than one instance
 - Support for multiple Linux Distributions (Ubuntu & Debian)
 
 ### Minecraft Vanilla Features:
-- Supported Minecraft Vanilla Versions: Minecraft 1.7.X - 1.21.X
+- Supported Minecraft Vanilla Versions: Minecraft 1.7.X - 26.X (including Snapshots and Pre-releases)
 
 ### Minecraft Forge Features:
-- Supported Minecraft Forge Versions: Minecraft 1.7.10 - 1.21.X
+- Supported Minecraft Forge Versions: Minecraft 1.7.10 - 26.X
 - Installing a specific Forge Version. (A Version Overview can be found [here](https://files.minecraftforge.net/net/minecraftforge/forge/))
 
 ### Minecraft Spigot Features:
-- Supported Minecraft Spigot Versions: 1.8.X - 1.21.X
+- Supported Minecraft Spigot Versions: 1.8.X - 26.X
 - Using Spigot's offical [BuildTools](https://www.spigotmc.org/wiki/buildtools/) to compile the spigot.jar(s)
 - Caching of already compiled spigot.jar(s) to avoid unneccessary re-compilation of already compiled spigot.jar(s)
 
 ### Minecraft Paper Features:
-- Supported Minecraft Paper Versions: 1.8.X - 1.21.X
-- Possibility to install every existing Build of Paper
-- Show list of available Builds for each version to select from
-- Using Paper's official [API](https://api.papermc.io/docs/swagger-ui/index.html?configUrl=/openapi/swagger-config) to obtain available Builds
-- Adjusted Sub-Folder Naming (including the Build-Number)
+- Supported Minecraft Paper Versions: 1.8.X - 26.X
+- Possibility to install every existing build of Paper
+- Show list of available builds for each version to select from
+- Using Paper's official [Downloads API](https://fill.papermc.io) (v3) to obtain available builds
+- Adjusted Sub-Folder Naming (including the build-number)
+
+### Minecraft Leaf Features:
+- Supported Minecraft Leaf Versions: 1.19.2 - 1.21.X
+- Possibility to install every existing build of Leaf
+- Show list of available builds for each version to select from
+- Automatic distinction between direct download versions and versions with build selection.
+- Using Leaf's official [API](https://api.leafmc.one/docs/swagger-ui/index.html) for versions that support build selection.
+- Adjusted Sub-Folder Naming (including the build-Number)
+- Important: The Leaf developers recommend using version 1.21.4 or newer. Older versions are not recommended for production use.
+
+### Minecraft Arclight Features:
+- Supported Minecraft Arclight Versions: all versions exposed by Arclight's official download API
+- Support for available Arclight loaders (Forge, NeoForge and Fabric, depending on Minecraft version)
+- Show list of available Arclight builds for each Minecraft version and loader
+- Using Arclight's official download API to obtain available builds
+- Adjusted Sub-Folder Naming (including the loader and build)
 
 
 
@@ -106,7 +140,7 @@ In the last line of this file you can adjust the number after `-Xmx` to adjust m
 
 #### **Can I use this script to install Snapshot Versions of Minecraft?**
 
-**No.** This script can only install full game versions. Snapshot Versions are not supported!
+**Yes.** You can install Snapshot and Pre-release versions for Minecraft Vanilla by simply typing the snapshot name (e.g., `13w36a` or `26.1-pre-3`) when prompted for the version.
 
 #### **I've accidentally closed my Minecraft console. How can I open it again?** 
 Dont worry, the console will kept open in the background using *screen*.  
@@ -142,6 +176,9 @@ These are all the packages used in this script:
 
 **Python Script:** mcurlgrabber.py (Thanks to [Christian](https://github.com/christian-thiele)!)
 
+## Telemetry / API
+This script sends anonymous telemetry data (such as your OS information, script version, and installed Minecraft version) to an API. This data is used purely for internal development purposes to help improve the installer and understand which platforms are most used. Absolutely no personal or identifiable information is collected or stored. If you still wish to opt out, you can disable this function by creating a `.disable_telemetry` file as described in the **Experimental Settings** below.
+
 ## Experimental Settings
 **Important:** With these experimental settings you can **disable** certain functions of the script.
 Use them at your own risk and **only** if you know what you are doing!
@@ -165,6 +202,14 @@ touch .installed
  ```bash
 touch .disable_spigot_archive
 ```
+ Disable Telemetry (API data sending):
+ ```bash
+touch .disable_telemetry
+```
+ Enable future pre-release installations (versions beyond current max supported):
+ ```bash
+touch .enable_future_pre_releases
+```
 
 ### Undo experimental settings
 Enable Distro-check:
@@ -183,8 +228,28 @@ Enable caching/archiving of compiled Spigot.jar(s):
 ```bash
 rm .disable_spigot_archive
 ```
+Enable Telemetry (API data sending):
+```bash
+rm .disable_telemetry
+```
+Disable future pre-release installations:
+```bash
+rm .enable_future_pre_releases
+```
 
 ## Support
 
 For support, join my [Discord](https://realtm.link/discord) and create a Ticket.  
 (*Support in German and English*)
+
+## License
+
+Shield: [![CC BY-NC-SA 4.0][cc-by-nc-sa-shield]][cc-by-nc-sa]
+
+This work is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License][cc-by-nc-sa].
+
+[![CC BY-NC-SA 4.0][cc-by-nc-sa-image]][cc-by-nc-sa]
+
+[cc-by-nc-sa]: http://creativecommons.org/licenses/by-nc-sa/4.0/
+[cc-by-nc-sa-image]: https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png
+[cc-by-nc-sa-shield]: https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg
